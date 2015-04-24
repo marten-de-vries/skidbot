@@ -1,0 +1,8 @@
+pickUp
+left(2)
+forward
+backward
+repeat (2) {
+	right
+}
+putDown

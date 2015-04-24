@@ -1,0 +1,42 @@
+{
+  "name": "skidbot",
+  "private": true,
+  "version": "0.1.0",
+  "description": "An open source robot simulator that helps you learn programming",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run jshint",
+    "jshint": "./node_modules/.bin/jshint *.js",
+    "package": "./bin/package.sh",
+    "build": "mkdir -p dist && ./node_modules/.bin/browserify -t brfs -o dist/game.js index.js && npm run minify",
+    "minify": "./node_modules/.bin/uglifyjs -mc -o dist/game.min.js dist/game.js",
+    "dev": "./node_modules/.bin/watchify -t brfs -o dist/game.min.js index.js -v"
+  },
+  "keywords": [
+    "skidbot",
+    "robomind",
+    "clone",
+    "game",
+    "interpreter",
+    "robot",
+    "programming",
+    "learn",
+    "parser",
+    "simulator"
+  ],
+  "author": "Marten de Vries",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^9.0.4",
+    "jshint": "^2.6.3",
+    "uglify-js": "^2.4.19",
+    "watchify": "^3.1.0"
+  },
+  "dependencies": {
+    "codemirror": "^5.1.0",
+    "lie": "^2.8.1",
+    "mod-op": "^1.0.0",
+    "robomind-interpreter": "^1.0.0",
+    "robomind-parser": "^1.0.0"
+  }
+}
