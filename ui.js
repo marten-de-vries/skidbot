@@ -54,9 +54,13 @@ parser.languages.forEach(function (lang) {
       // split over multiple lines for readability
       {regex: regexToMatchWords(vars), token: 'variable'},
 
-      {regex: /[a-z]+/i, token: 'variable-2'},
       {regex: /[\{\(]/, indent: true},
-      {regex: /[\}\)]/, dedent: true}
+      {regex: /[\}\)]/, dedent: true},
+
+      // much easier to specify what shouldn't be highlighted of the
+      // remaining stuff than to specify the correct unicode ranges in
+      // a JS regex...
+      {regex: /[^\s+-/=~\*]+/, token: 'variable-2'}
     ],
     meta: {
       lineComment: "#",

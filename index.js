@@ -339,6 +339,17 @@ ui.on('run', function () {
 
     return interpreter.run(ast);
   }).catch(function (err) {
+    console.error(err);
+    if (err instanceof parser.SyntaxError) {
+      err = [
+        err.message.toString(),
+        ' This happened at line ',
+        err.line,
+        ', column ',
+        err.column,
+        '.'
+      ].join('');
+    }
     global.alert(err);
   }).then(function () {
     ui.stopMarkingPosition();
