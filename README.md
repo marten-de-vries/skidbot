@@ -44,4 +44,5 @@ TODOS
 - Animated tiles
 - Test in other browsers than firefox (at least fix the clouds in chrome)
 
-See also robomind-parser & robomind-interpreter
+See also [robomind-parser](https://www.npmjs.com/package/robomind-parser)
+& [robomind-interpreter](https://www.npmjs.com/package/robomind-interpreter)
