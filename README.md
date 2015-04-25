@@ -5,9 +5,13 @@ SkidBot
 [![Dependency Status](https://david-dm.org/marten-de-vries/skidbot.svg)](https://david-dm.org/marten-de-vries/skidbot)
 [![devDependency Status](https://david-dm.org/marten-de-vries/skidbot/dev-status.svg)](https://david-dm.org/marten-de-vries/skidbot#info=devDependencies)
 
+![Screenshot](http://i.cubeupload.com/IoMAJz.png)
+
 SkidBot is an open source robot simulator that helps you learn
 programming. It's inspired by RoboMind, and uses its programming
 language and map format.
+
+[demo](http://marten-de-vries.github.io/skidbot)
 
 Contributing
 ------------

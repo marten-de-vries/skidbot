@@ -1,12 +1,12 @@
 {
   "name": "skidbot",
   "private": true,
-  "version": "0.1.0",
   "description": "An open source robot simulator that helps you learn programming",
   "main": "index.js",
   "scripts": {
     "test": "npm run jshint",
     "jshint": "./node_modules/.bin/jshint *.js",
+    "publish-gh-pages": "./bin/publish-gh-pages.sh",
     "package": "./bin/package.sh",
     "build": "mkdir -p dist && ./node_modules/.bin/browserify -t brfs -o dist/game.js index.js && npm run minify",
     "minify": "./node_modules/.bin/uglifyjs -mc -o dist/game.min.js dist/game.js",
@@ -27,6 +27,7 @@
   "author": "Marten de Vries",
   "license": "ISC",
   "devDependencies": {
+    "brfs": "^1.4.0",
     "browserify": "^9.0.4",
     "jshint": "^2.6.3",
     "uglify-js": "^2.4.19",

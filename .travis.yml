@@ -1,1 +1,10 @@
 language: node_js
+
+script: npm test && npm run publish-gh-pages
+
+env:
+  - secure: "g4S+r2jw6oUJ49YZSzS6TnARxM/nA626Lwh7jjLhnWTHCxA4e21O3peSYT914Gpw/LZ7KLHGOZHxzko+YKgMaZexqbmVot0yQyV4QXJKvXPCPitxz54PWO0VFmnoy+6n6hBe/UPHwgKIYIcLs++KQWH/b27rHWiHu80QwQ9WrZQ="
+
+branches:
+  only:
+    - master
