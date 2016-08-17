@@ -30,7 +30,7 @@
     "brfs": "^1.4.0",
     "browserify": "^13.0.0",
     "jshint": "^2.6.3",
-    "uglify-js": "^2.4.19",
+    "uglify-js": "^2.7.3",
     "watchify": "^3.1.0"
   },
   "dependencies": {
