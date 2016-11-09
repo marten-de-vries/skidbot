@@ -37,7 +37,7 @@
     "codemirror": "^5.1.0",
     "lie": "^3.0.2",
     "mod-op": "^1.0.0",
-    "robomind-interpreter": "^1.0.0",
+    "robomind-interpreter": "^1.1.0",
     "robomind-parser": "^1.0.0"
   }
 }
