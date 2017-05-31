@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>SkidBot</title>
+    <link rel='stylesheet' href='codemirror.css'>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html, body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: sans-serif;
+      }
+      #tools {
+        position: absolute;
+        width: 40%;
+        height: 100%;
+      }
+      #title {
+        text-align: center;
+        border-bottom: 1px solid #333;
+        margin: 0;
+        padding: 0.5em;
+        height: 75px;
+      }
+      .CodeMirror {
+        position: absolute;
+        width: 100%;
+        top: 75px;
+        bottom: 120px;
+        height: auto
+      }
+      .interpreter-position {
+        width: .8em;
+      }
+      #actions {
+        border-top: 1px solid #333;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        padding: 1em;
+        height: 120px;
+      }
+      #actions table {
+        width: 100%;
+      }
+      #actions table tr {
+        vertical-align: bottom;
+      }
+      #wrapper {
+        border-left: 1px solid #333;
+        position: absolute;
+        left: 40%;
+        width: 60%;
+        height: 100%;
+        overflow: hidden;
+        background-image: url(bg.png);
+      }
+      #clouds-layer {
+        position: absolute;
+        background-image: url(clouds.png);
+        width: 100%;
+        height: 100%;
+        z-index: 6;
+      }
+      #container {
+        width: 100%;
+        height: 100%;
+      }
+      .layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #background-layer {
+        z-index: 1;
+      }
+      #paint-layer {
+        z-index: 2;
+      }
+      #action-layer {
+        z-index: 3;
+      }
+      #foreground-layer {
+        z-index: 4;
+      }
+
+      #robot-container {
+        position: absolute;
+        transition-timing-function: linear;
+        transition-property: left, top;
+      }
+      #robot-container div {
+        transition-property: transform;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+      }
+      #gripper {
+        transition-timing-function: linear;
+        transition-property: top !important;
+        z-index: -1;
+      }
+      .beacon {
+        background-image: url(beacon.png);
+        position: absolute;
+        transition-timing-function: linear;
+        transition-property: left, top;
+        width: 200px;
+        height: 200px;
+        z-index: -1;
+      }
+      #robot-head {
+        background-image: url(robotHead.png);
+      }
+      #robot-body {
+        background-image: url(robotBody.png);
+      }
+      #robot-shadow {
+        background-image: url(robotShadow.png);
+        left: 7px;
+        top: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='tools'>
+      <h1 id='title'>SkidBot</h1>
+      <div id='actions'>
+        <table>
+          <tbody>
+            <tr>
+              <td>Speed:</td>
+              <td>slow<input id='speed-slider' type='range' min='1' max='10' step='1' value='5'>fast</td>
+            </tr>
+            <tr>
+              <td>Language:</td>
+              <td>
+                <select id='language-choice'>
+                  <option value='en'>English</option>
+                  <option value='fy'>Frisian</option>
+                  <option value='nl'>Dutch</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td><button id='run-button'>Run!</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id='wrapper'>
+      <div id='clouds-layer'></div>
+      <div id='container'>
+        <canvas class='layer' id='background-layer'></canvas>
+        <canvas class='layer' id='paint-layer'></canvas>
+        <div class='layer' id='action-layer'>
+          <div id='robot-container' class='duration-2'>
+            <div id='robot' class='duration-2'>
+              <div id='robot-body'></div>
+              <div id='robot-head' class='duration-1'></div>
+            </div>
+            <div id='robot-shadow' class='duration-2'></div>
+          </div>
+        </div>
+        <canvas class='layer' id='foreground-layer'></canvas>
+      </div>
+    </div>
+    <script src='game.min.js'></script>
+  </body>
+</html>
